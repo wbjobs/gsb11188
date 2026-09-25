@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>配置向导 · 可分享状态</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <main class="app">
+    <header>
+      <h1>产品配置向导</h1>
+      <p class="hint">所有选择自动保存在本地，可随时生成分享链接。</p>
+    </header>
+
+    <nav id="stepper" class="stepper" aria-label="步骤"></nav>
+
+    <section id="step-container" class="step-container" aria-live="polite"></section>
+
+    <div class="actions">
+      <button id="btn-prev" type="button">上一步</button>
+      <button id="btn-next" type="button">下一步</button>
+      <button id="btn-share" type="button" class="primary">生成分享链接</button>
+      <button id="btn-reset" type="button" class="danger">重置</button>
+    </div>
+
+    <section id="share-panel" class="share-panel hidden">
+      <h2>分享</h2>
+      <p id="share-info"></p>
+      <textarea id="share-output" readonly rows="3" spellcheck="false"></textarea>
+      <div class="share-actions">
+        <button id="btn-copy" type="button">复制</button>
+        <button id="btn-view-raw" type="button">查看明文状态</button>
+      </div>
+      <pre id="raw-state" class="raw-state hidden"></pre>
+    </section>
+
+    <div id="toast" class="toast hidden" role="status"></div>
+  </main>
+
+  <script src="js/serializer.js"></script>
+  <script src="js/storage.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

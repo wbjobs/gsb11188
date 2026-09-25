@@ -1,0 +1,129 @@
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+  background: #f4f5f7;
+  color: #1f2329;
+}
+.app {
+  max-width: 720px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+}
+h1 { font-size: 1.4rem; margin: 0 0 .25rem; }
+h2 { font-size: 1.1rem; }
+.hint { color: #6b7280; font-size: .85rem; margin-top: 0; }
+
+.stepper {
+  display: flex;
+  gap: .4rem;
+  margin: 1rem 0 1.25rem;
+  flex-wrap: wrap;
+}
+.stepper .dot {
+  flex: 1;
+  min-width: 70px;
+  text-align: center;
+  padding: .4rem .2rem;
+  font-size: .78rem;
+  border-radius: 6px;
+  background: #eef0f3;
+  color: #6b7280;
+  cursor: pointer;
+  border: 1px solid transparent;
+}
+.stepper .dot.active { background: #2563eb; color: #fff; }
+.stepper .dot.done { background: #dbeafe; color: #1d4ed8; }
+
+.step-container fieldset { border: none; padding: 0; margin: 0 0 1rem; }
+.step-container legend { font-weight: 600; margin-bottom: .5rem; }
+.option {
+  display: block;
+  padding: .55rem .75rem;
+  margin-bottom: .4rem;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.option:hover { border-color: #93c5fd; }
+.option input { margin-right: .5rem; }
+.field { margin-bottom: .8rem; }
+.field label { display: block; font-size: .85rem; margin-bottom: .25rem; }
+.field input[type="text"], .field input[type="email"], .field input[type="tel"] {
+  width: 100%;
+  padding: .5rem .6rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  font-size: .9rem;
+}
+.badge-sensitive {
+  font-size: .7rem;
+  color: #b45309;
+  background: #fef3c7;
+  border-radius: 4px;
+  padding: 0 .3rem;
+  margin-left: .3rem;
+}
+
+.actions { display: flex; gap: .5rem; margin-top: 1rem; }
+button {
+  padding: .5rem 1rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #fff;
+  cursor: pointer;
+  font-size: .9rem;
+}
+button:hover { background: #f3f4f6; }
+button.primary { background: #2563eb; border-color: #2563eb; color: #fff; }
+button.primary:hover { background: #1d4ed8; }
+button.danger { color: #b91c1c; }
+button:disabled { opacity: .4; cursor: not-allowed; }
+
+.share-panel {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border: 1px dashed #93c5fd;
+  border-radius: 8px;
+  background: #f8fbff;
+}
+.share-panel textarea {
+  width: 100%;
+  font-family: ui-monospace, monospace;
+  font-size: .78rem;
+  padding: .5rem;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  resize: vertical;
+  word-break: break-all;
+}
+.share-actions { display: flex; gap: .5rem; margin-top: .5rem; }
+.raw-state {
+  margin-top: .75rem;
+  padding: .75rem;
+  background: #111827;
+  color: #d1fae5;
+  border-radius: 6px;
+  font-size: .75rem;
+  overflow: auto;
+  max-height: 260px;
+}
+
+.toast {
+  position: fixed;
+  left: 50%;
+  bottom: 2rem;
+  transform: translateX(-50%);
+  padding: .6rem 1.1rem;
+  border-radius: 8px;
+  background: #111827;
+  color: #fff;
+  font-size: .85rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, .25);
+}
+.toast.error { background: #b91c1c; }
+.toast.warn { background: #b45309; }
+.hidden { display: none !important; }
