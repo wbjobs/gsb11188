@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>6 步配置向导</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main class="app">
+  <header>
+    <h1>配置向导</h1>
+    <p class="subtitle">6 步完成配置，可生成分享链接恢复状态</p>
+  </header>
+
+  <nav id="stepNav" class="step-nav" aria-label="步骤导航"></nav>
+
+  <section id="stepPanel" class="step-panel"></section>
+
+  <div class="actions">
+    <button id="prevBtn" type="button">上一步</button>
+    <button id="nextBtn" type="button">下一步</button>
+    <button id="shareBtn" type="button" class="primary">生成分享链接</button>
+    <button id="resetBtn" type="button" class="danger">重置</button>
+  </div>
+
+  <section id="sharePanel" class="share-panel hidden">
+    <h2>分享</h2>
+    <div class="share-row">
+      <label for="shareUrl">分享 URL</label>
+      <div class="copy-row">
+        <input id="shareUrl" type="text" readonly>
+        <button id="copyUrlBtn" type="button">复制</button>
+      </div>
+      <p class="hint" id="urlMeta"></p>
+    </div>
+    <div class="share-row">
+      <label for="shareString">序列化字符串（可粘贴到任何环境恢复）</label>
+      <div class="copy-row">
+        <input id="shareString" type="text" readonly>
+        <button id="copyStringBtn" type="button">复制</button>
+      </div>
+    </div>
+    <details class="readable">
+      <summary>查看可读内容（已过滤敏感信息）</summary>
+      <pre id="readableJson"></pre>
+    </details>
+    <div class="share-row">
+      <label for="importString">从字符串恢复</label>
+      <div class="copy-row">
+        <input id="importString" type="text" placeholder="粘贴序列化字符串或完整分享 URL">
+        <button id="importBtn" type="button">恢复</button>
+      </div>
+    </div>
+  </section>
+
+  <div id="toast" class="toast hidden" role="status"></div>
+</main>
+<script type="module" src="js/app.js"></script>
+</body>
+</html>
